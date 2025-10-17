@@ -2,8 +2,7 @@
 services:
   docker-broadcast-relay:
     container_name: broadcast-relay
-    # image: ghcr.io/boomshankerx/docker-broadcast-relay:latest
-    image: docker-broadcast-relay:latest
+    image: ghcr.io/boomshankerx/docker-broadcast-relay:latest
     restart: unless-stopped
     environment:
       BROADCAST_TARGET: ${BROADCAST_TARGET:-}
