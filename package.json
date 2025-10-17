@@ -1,0 +1,15 @@
+{
+  "name": "docker-broadcast-relay",
+  "private": false,
+  "repository": "https://github.com/boomshankerx/docker-broadcast-relay",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/commit-analyzer": "13.0.0",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "10.0.7",
+    "@semantic-release/npm": "13.0.1",
+    "@semantic-release/release-notes-generator": "15.0.1",
+    "semantic-release": "25.1.2"
+  }
+}

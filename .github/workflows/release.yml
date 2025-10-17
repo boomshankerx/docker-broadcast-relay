@@ -1,0 +1,30 @@
+name: Release
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # semantic-release needs history
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: semantic-release
+        uses: cycjimmy/semantic-release-action@v5
+        with:
+          branch: main
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}

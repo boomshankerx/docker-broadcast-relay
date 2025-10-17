@@ -1,0 +1,16 @@
+---
+services:
+  docker-broadcast-relay:
+    container_name: broadcast-relay
+    # image: ghcr.io/boomshankerx/docker-broadcast-relay:latest
+    image: docker-broadcast-relay:latest
+    restart: unless-stopped
+    environment:
+      BROADCAST_TARGET: ${BROADCAST_TARGET:-}
+      DOCKER_BRIDGE: ${DOCKER_BRIDGE:-}
+      HOST_INTERFACE: ${HOST_INTERFACE:-}
+      UDP_PORTS: ${UDP_PORTS:-}
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    network_mode: host
